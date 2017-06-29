@@ -16,7 +16,7 @@
 
 .answerbtn:active {
   background-color: red;
-
+}
 #login form {
     background-color: F8F8F8;
     width: 25%;
@@ -52,4 +52,24 @@
 #login form input[type=submit]:hover {
   opacity: 0.8;
 
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+nav li {
+    float: right;
+}
+
+nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
 }
