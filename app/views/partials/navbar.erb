@@ -2,11 +2,10 @@
   <ul>
     <% if logged_in? %>
     <li ><a href='/users/logout'>Log out</a></li>
-    <li ><a href='/questions'>Homepage</a></li>
-    <li><%= user.find_by(session[:id]) %></li>
+    <li><a href='/questions'><<%= user.find_by(session[:id]) %></li>
     <% else %>
-    <li class=><a href='user/login'></a></li>
-    <li ><a href='/questions'>Homepage</a></li>
+    <li> class=><a href='user/login'></a>Login</li>
+    <li><a href='/questions'>Homepage</a></li>
     <% end %>
   </ul>
 </nav>
