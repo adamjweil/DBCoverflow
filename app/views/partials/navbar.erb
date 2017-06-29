@@ -1,0 +1,12 @@
+<nav>
+  <ul>
+    <% find_user %>
+    <% if logged_in? %>
+    <li ><a href='/users/logout'>Log out</a></li>
+    <li ><a href='/questions'>Homepage</a></li>
+    <% else %>
+    <li class=><a href='user/login'>Log in</a></li>
+    <li ><a href='/questions'>Homepage</a></li>
+    <% end %>
+  </ul>
+</nav>
