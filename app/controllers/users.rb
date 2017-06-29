@@ -4,7 +4,7 @@ end
 
 get '/register' do
   erb :'user/register'
-
+end
 
 post '/login' do
   create_user
