@@ -1,9 +1,24 @@
 <h1> this is the questions page </h1>
 
-<% @questions.each do |question| %>
-<%= question.question %> <a class="answerbtn" href="/answers/<%= question.id %>"> answer</a>
-<a class="commentbtn" href="/comment/<%= question.id %>"> comment</a>
-<a class="deletebtn" href="/delete/<%= question.id %>"> delete</a>
 
-  <br>
-<% end %>
+<div class='questions-container'>
+  <% @questions.each do |question| %>
+
+    <article id="<%= question.id %>">
+      <form method="post" action='/questions/<%= question.id %>/vote' class="inline">
+        <button type="submit" name="submit_param" value="submit_value" class="fa fa-sort-desc vote-button upvote-button"></button>
+      </form>
+      <h2><%= question.question %></h2><a class="answerbtn" href="/answers/<%= question.id %>"> answer</a>
+      <a class="commentbtn" href="/comment/<%= question.id %>"> comment</a>
+      <a class="deletebtn" href="/delete/<%= question.id %>"> delete</a>
+      <p>
+        <span class='points'><%= question.votes.count %></span>
+        <span class='username'><%= question.user.username %></span>
+        <span class='timestamp'><%= question.created_at %></span>
+        <span class='comment-count'><%= question.comments.count %></span>
+        <a class="delete" href='/question/<%= question.id %>'></a>
+      </p>
+    </article>
+
+  <% end %>
+</div>
