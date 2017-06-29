@@ -1,30 +1,17 @@
-> **Note**: This branch (master) contains a skeleton without any app code, perfect for creating a _new_ application or challenge. If you're looking for an example app built with this skeleton, take a look at the [example](/../..//tree/example) branch which includes basic CRUD and RSpec tests.
+DBC Overflow Challenge
 
-### Purpose
-The Sinatra Skeleton:
+Team Members:
+Evans, Yoosters & Adam
 
-1. Provides a foundation for building challenges or creating a new Sinatra application.
-2. Demonstrates a reasonable set of practices around building Sinatra applications.
-3. Eases the transition to Rails for Dev Bootcamp students
+User Stories
+MVP:
+  - As students at DBC, we know what it's like to have all sorts of questions. And we're not always sure who is best to approach to answer our questions. We are building a platform where DBC students can log onto and create an account. Students are then able to post questions on the web platform, and other students can post answers in response to our questions.
 
-### Quickstart
+Additional Features:
+  - The student who posts a pecific question wants the next person to read his thread to find the best answer quickly, so they should be able to select a 'Best Answer' from all of answers.
 
-1.  `bundle install`
-2.  `shotgun config.ru`
+  - Users should also be able to upvote any kind of question, answer, or comment, if they deem that content to be usefull.
 
-As needed, create models & migrations with the `rake` tasks:
-
-```
-rake generate:migration  # Create an empty migration in db/migrate, e.g., rake generate:migration NAME=create_tasks
-rake generate:model      # Create an empty model in app/models, e.g., rake generate:model NAME=User
-```
-
-### Contributing
-
-We would love for you to help make the skeleton more awesome, There are three ways to contribute:
-
-1. Ask for a bug fix or enhancement!
-2. Submit a pull request for a bug fix or enhancement!
-3. Code review an open pull request!
-
-Be prepared to give and receive specific, actionable, and kind feedback!
+Trello Link:
+  (Click on this link and request to be a member of team)
+https://trello.com/b/tD44lNHD/dbc-overflow-website

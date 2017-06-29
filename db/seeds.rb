@@ -47,7 +47,7 @@ end
   Vote.create(user_id: User.all.sample.id,
               votable_id: Comment.all.sample.id,
               votable_type: "Comment")
-end 
+end
 
 
 
