@@ -1,3 +1,5 @@
+<%= erb :'/partials/navbar' %>
+
 <h1> this is the questions page </h1>
 
 
@@ -5,8 +7,11 @@
   <% @questions.each do |question| %>
 
     <article id="<%= question.id %>">
-      <form method="post" action='/questions/<%= question.id %>/vote' class="inline">
+      <form method="post" action='/questions/<%= question.id %>/upvote' class="inline">
         <button type="submit" name="submit_param" value="submit_value" class="fa fa-sort-desc vote-button upvote-button"></button>
+      </form>
+      <form method="post" action='/questions/<%= question.id %>/downvote' class="inline">
+        <button type="submit" name="submit_param" value="submit_value" class="fa fa-sort-desc vote-button downvote-button"></button>
       </form>
       <h2><%= question.question %></h2><a class="answerbtn" href="/answers/<%= question.id %>"> answer</a>
       <a class="commentbtn" href="/comment/<%= question.id %>"> comment</a>

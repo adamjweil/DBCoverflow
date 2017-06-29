@@ -1,4 +1,5 @@
 helpers do
+  
   def create_user
     @user = User.new(params[:user_info])
     @user.password = params[:user_info][:password]
