@@ -12,6 +12,10 @@ Additional Features:
 
   - Users should also be able to upvote any kind of question, answer, or comment, if they deem that content to be usefull.
 
+
+Trello Account Link:
+
 Trello Link:
   (Click on this link and request to be a member of team)
+
 https://trello.com/b/tD44lNHD/dbc-overflow-website
