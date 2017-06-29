@@ -1,0 +1,9 @@
+<h1> this is the questions page </h1>
+
+<% @questions.each do |question| %>
+<%= question.question %> <a class="answerbtn" href="/answers/<%= question.id %>"> answer</a>
+<a class="commentbtn" href="/comment/<%= question.id %>"> comment</a>
+<a class="deletebtn" href="/delete/<%= question.id %>"> delete</a>
+
+  <br>
+<% end %>
