@@ -23,7 +23,8 @@ post '/questions/:id/upvote' do
 end
 
 post '/questions/:id/downvote' do
-  Vote.create(votes: -1, user_id: User.find_by(id: session[:id]).id, votable_id: Question.find_by(id: params[:id]).id, votable_type: "Question")
+  Vote.create(votes: -1, user_id: User.find_by(id: 1).id, votable_id: Question.find_by(id: params[:id]).id, votable_type: "Question")
+  question = Question.find_by(id: params[:id])
   if request.xhr?
     erb :'/questions/_totalvotes', layout: false, locals: {question: question}
   else
