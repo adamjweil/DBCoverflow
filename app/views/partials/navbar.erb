@@ -3,7 +3,7 @@
     <% current_user %>
     <% if logged_in? %>
       <li ><a href='/users/logout'>Log out</a></li>
-      <li>Hi <%= @current_user.username %></li>
+      <li>Hi, <%= @current_user.username %>!!  </li>
     <% else %>
       <li class=><a href='login'>Log in</a></li>
     <% end %>
