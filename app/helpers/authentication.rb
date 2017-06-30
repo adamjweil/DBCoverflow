@@ -1,21 +1,17 @@
 helpers do
-  
+
   def create_user
-    @user = User.new(params[:user_info])
-    @user.password = params[:user_info][:password]
+    @user = User.new(params[:user_information])
+    @user.password = params[:user_information][:password]
     @user.save!
   end
-  def login
-    @user = User.find_by(email: params[:user_info][:email])
-      if @user && @user.password == params[:user_info][:password]
-        session[:id] = @user.id
-        redirect '/questions'
-     else
-        "Login Attempt Failed"
-      end
+
+  def current_user
+    @current_user ||= User.find(session[:user_id])
   end
+
   def logged_in?
-      !!@user
+    !!@current_user
   end
 
 end
