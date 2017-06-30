@@ -1,9 +1,9 @@
-<form method="post" action="comments">
-    <label for="comment">add comment</label>
-    <input id="comment" name="comment[comments]" type="text">
+<%= erb :'partials/navbar' %>
 
-    <input id="user-id" name="user[current_user]" >
-
-    <input type="submit" value="create comment" class="button">
+<form method="post" action="/questions/<%= params[:id] %>/comments">
+    <label for="comment">Your comment</label><br>
+    <input id="comment" name="comments" type="text"><br>
+    <input type="hidden" name="commentable_type" value="Question">
+    <input type="submit" value="Submit Comment" class="button">
   </form>
-</main> 
+</main>

@@ -1,3 +1,3 @@
-get '/' do 
-  redirect '/question'
+get '/' do
+  redirect '/questions'
 end
