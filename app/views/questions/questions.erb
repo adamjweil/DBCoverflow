@@ -13,15 +13,15 @@
       <form method="post" action='/questions/<%= question.id %>/downvote' class="inline">
         <button type="submit" name="submit_param" value="submit_value" class="fa fa-sort-desc vote-button downvote-button"></button>
       </form>
-      <h2><%= question.question %></h2><a class="answerbtn" href="/answers/<%= question.id %>"> answer</a>
+      <a class="question" href="/answers/<%= question.id %>"> <h2><%= question.question %></h2> </a>
+      <a class="answerbtn" href="/answers/<%= question.id %>"> answer</a>
       <a class="commentbtn" href="/comment/<%= question.id %>"> comment</a>
-      <a class="deletebtn" href="/delete/<%= question.id %>"> delete</a>
       <p>
-        <span class='points'><%= question.votes.sum("votes") %></span>
+        <%= erb :'/questions/_totalvotes', layout: false, locals: {question: question} %>
         <span class='username'><%= question.user.username %></span>
         <span class='timestamp'><%= question.created_at %></span>
         <span class='comment-count'><%= question.comments.count %></span>
-        <a class="delete" href='/question/<%= question.id %>'></a>
+        <a class="delete" href='/questions/<%= question.id %>'></a>
       </p>
     </article>
 
