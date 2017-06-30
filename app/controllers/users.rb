@@ -7,8 +7,13 @@ get '/register' do
 end
 
 post '/register' do
-  create_user
-  redirect '/questions/questions'
+  @user = User.new(params[:user_information])
+  # @user.password = params[:user_information][:password]
+  if @user.save!
+      redirect '/questions'
+  else
+  redirect '/register/new'
+  end
 end
 
 

@@ -7,13 +7,13 @@
   <% @questions.each do |question| %>
 
     <article id="<%= question.id %>">
+      <%if logged_in?%>
       <form method="post" action='/questions/<%= question.id %>/upvote' class="inline">
         <button type="submit" name="submit_param" value="submit_value" class="fa fa-sort-desc vote-button upvote-button upup"></button>
       </form>
       <form method="post" action='/questions/<%= question.id %>/downvote' class="inline">
         <button type="submit" name="submit_param" value="submit_value" class="fa fa-sort-desc vote-button downvote-button downdown"></button>
       </form>
-
       <a class="question" href="/answers/<%= question.id %>"> <h2><%= question.question %></h2> </a>
       <a class="answerbtn" href="/answers/<%= question.id %>"> answer</a>
       <a class="commentbtn" href="/answers/<%= question.id %>"> comment</a>
@@ -26,6 +26,19 @@
         <a class="delete" href='/questions/<%= question.id %>'></a>
       </p>
     </article>
+      <% else %>
+      <a class="question" href="/answers/<%= question.id %>"> <h2><%= question.question %></h2> </a>
+      <a class="answerbtn" href="/answers/<%= question.id %>"> answer</a>
+      <a class="commentbtn" href="/answers/<%= question.id %>"> comment</a>
 
+      <p>
+        <%= erb :'/questions/_totalvotes', layout: false, locals: {question: question} %>
+        <span class='username'><%= question.user.username %></span>
+        <span class='timestamp'><%= question.created_at %></span>
+        <span class='comment-count'><%= question.comments.count %></span>
+        <a class="delete" href='/questions/<%= question.id %>'></a>
+      </p>
+    </article>
+    <%end%>
   <% end %>
 </div>
