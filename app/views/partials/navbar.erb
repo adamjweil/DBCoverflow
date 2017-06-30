@@ -1,10 +1,11 @@
 <nav>
   <ul>
     <% if logged_in? %>
-      <li ><a href='/users/logout'>Log out</a></li>
+      <li ><a href='/logout'>Log out</a></li>
       <li>Hi, <%= @current_user.username %>!!  </li>
     <% else %>
-      <li class=><a href='login'>Log in</a></li>
+      <li class=><a href='/login'>Log in</a></li>
+      <li class=><a href='/register'>Register</a></li>
     <% end %>
   </ul>
 </nav>

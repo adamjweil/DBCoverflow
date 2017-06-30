@@ -10,6 +10,7 @@ post '/register' do
   @user = User.new(params[:user_information])
   # @user.password = params[:user_information][:password]
   if @user.save!
+    session[:user_id] = @user.id
       redirect '/questions'
   else
   redirect '/register/new'

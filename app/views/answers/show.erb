@@ -1,22 +1,29 @@
 
 
-<%= @question.question %> <br><br>
+<h2><%= @question.question %></h2> <br><br>
+<div id="comments">
+<h3>Comments</h3>
+<ul>
 <% @all_comments = Comment.all %>
 <% @all_comments.each do |comment| %>
   <% if comment.commentable_id == @question.id && comment.commentable_type == "Question" %>
-    <%= comment.comments %>
+    <li><%= comment.comments %></li>
   <% end %>
 <% end %>
+</div>
+</ul>
+<div id="answers">
+<a href="/questions/<%= @question.id %>/comments/new">add comment</a>
+<h3>Answers</h3>
+<ul>
 <% @answers.each do |answer| %>
   <%= answer.answer %>
   <% @all_comments.each do |comment| %>
     <% if comment.commentable_id == answer.id && comment.commentable_type == "Answer" %>
-      <%= comment.comments %>
+      <li><%= comment.comments %></li>
     <% end %>
   <% end %>
 <% end %>
-
-<br><br>
-<a href="/questions/<%= @question.id %>/comments/new">add comment</a>
-<br><br>
+</ul>
+</div>
 <a href="/questions/<%= @question.id %>/answers/new">add answer</a>

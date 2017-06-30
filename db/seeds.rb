@@ -20,14 +20,14 @@ end
 
 100.times do
   Comment.create(user_id: User.all.sample.id,
-                  comment: Faker::Lorem.sentence(1),
+                  comments: Faker::Lorem.sentence(1),
                   commentable_id:  Question.all.sample.id,
                   commentable_type: "Question")
 end
 
 100.times do
   Comment.create(user_id: User.all.sample.id,
-                  comment: Faker::Lorem.sentence(1),
+                  comments: Faker::Lorem.sentence(1),
                   commentable_id:  Question.all.sample.id,
                   commentable_type: "Answer")
 end
@@ -53,7 +53,7 @@ end
 
 
 
-Question = ["How do you add CSS to webpages?", "C++ library to extract the intersection of multiple 3D geometries? Can OpenCASCADE do it?", "How can I write a rule that finds a number using integer/1?", "Large JDBC ResultSet Passed to Another thread doesn't release JVM memory"]
+# Question = ["How do you add CSS to webpages?", "C++ library to extract the intersection of multiple 3D geometries? Can OpenCASCADE do it?", "How can I write a rule that finds a number using integer/1?", "Large JDBC ResultSet Passed to Another thread doesn't release JVM memory"]
 # user.each do |user|
 #   user.question.create(question: Faker::Lorem.sentence(3))
 # end

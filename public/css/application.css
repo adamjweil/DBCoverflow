@@ -212,5 +212,12 @@ form#posts input[type='submit'] {
   color: #8C8C8C;
   vertical-align: sub;
   height: 25px;
-  width: 25px;
+  width: 25px;be
+}
+#answers {
+  border: 1px;
+  border-radius: 5px;
+}
+#comments {
+  border: 5px;
 }
