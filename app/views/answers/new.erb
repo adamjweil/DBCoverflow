@@ -1,5 +1,10 @@
-<%= @question.question %> <br>
+<%= erb :'partials/navbar' %>
 
-<% @answers.each do |answer| %>
-  <%= answer.answer %>
-<% end %>
+<form method="post" action="/questions/<%= params[:id] %>/answers">
+    <label for="answer">Your Answer</label><br>
+    <input id="answer" name="answer" type="text"><br>
+    <input type="hidden" name="commentable_type" value="Answer">
+    <input type="hidden" name="user_id" value="<%= session[:user_id] %>">
+    <input type="submit" value="Submit Answer" class="button">
+  </form>
+</main>

@@ -1,8 +1,22 @@
-<%= @question.question %> <br>
+
+
+<%= @question.question %> <br><br>
+<% @all_comments = Comment.all %>
+<% @all_comments.each do |comment| %>
+  <% if comment.commentable_id == @question.id && comment.commentable_type == "Question" %>
+    <%= comment.comments %>
+  <% end %>
+<% end %>
 <% @answers.each do |answer| %>
   <%= answer.answer %>
+  <% @all_comments.each do |comment| %>
+    <% if comment.commentable_id == answer.id && comment.commentable_type == "Answer" %>
+      <%= comment.comments %>
+    <% end %>
+  <% end %>
 <% end %>
 
-<a href="/comments/new">add comment</a>
-
-<a href="/comments/new">add comment</a>
+<br><br>
+<a href="/questions/<%= @question.id %>/comments/new">add comment</a>
+<br><br>
+<a href="/questions/<%= @question.id %>/answers/new">add answer</a>
