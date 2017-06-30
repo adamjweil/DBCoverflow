@@ -14,7 +14,7 @@
         <button type="submit" name="submit_param" value="submit_value" class="fa fa-sort-desc vote-button downvote-button"></button>
       </form>
       <h2><%= question.question %></h2><a class="answerbtn" href="/answers/<%= question.id %>"> answer</a>
-      <a class="commentbtn" href="/comment/<%= question.id %>"> comment</a>
+      <a class="commentbtn" href="/comments/<%= question.id %>"> comment</a>
       <a class="deletebtn" href="/delete/<%= question.id %>"> delete</a>
       <p>
         <span class='points'><%= question.votes.count %></span>
