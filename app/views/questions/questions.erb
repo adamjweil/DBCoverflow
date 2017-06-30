@@ -17,7 +17,7 @@
       <a class="commentbtn" href="/comment/<%= question.id %>"> comment</a>
       <a class="deletebtn" href="/delete/<%= question.id %>"> delete</a>
       <p>
-        <span class='points'><%= question.votes.count %></span>
+        <span class='points'><%= question.votes.sum("votes") %></span>
         <span class='username'><%= question.user.username %></span>
         <span class='timestamp'><%= question.created_at %></span>
         <span class='comment-count'><%= question.comments.count %></span>

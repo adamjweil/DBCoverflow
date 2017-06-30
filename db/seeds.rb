@@ -4,13 +4,13 @@ Question.delete_all
 Comment.delete_all
 Vote.delete_all
 
-User.create(username: "test", email: "email", password: "password")
+User.create(username: "test", email: "email@email.com", password: "password")
 
-10.times do
+15.times do
   @users = User.create(username: Faker::Name.name, email: Faker::Internet.email, password: "password")
 end
 
-30.times do
+40.times do
   Question.create(question: Faker::Lorem.sentence(3), user_id: User.all.sample.id)
 end
 
@@ -18,32 +18,32 @@ end
   Answer.create(answer: Faker::Lorem.word, user_id: User.all.sample.id, question_id: Question.all.sample.id)
 end
 
-20.times do
+100.times do
   Comment.create(user_id: User.all.sample.id,
                   commentable_id:  Question.all.sample.id,
                   commentable_type: "Question")
 end
 
-20.times do
+100.times do
   Comment.create(user_id: User.all.sample.id,
                   commentable_id:  Question.all.sample.id,
                   commentable_type: "Answer")
 end
 
 
-50.times do
+200.times do
   Vote.create(user_id: User.all.sample.id,
               votable_id: Question.all.sample.id,
               votable_type: "Question")
 end
 
-50.times do
+200.times do
   Vote.create(user_id: User.all.sample.id,
               votable_id: Answer.all.sample.id,
               votable_type: "Answer")
 end
 
-50.times do
+200.times do
   Vote.create(user_id: User.all.sample.id,
               votable_id: Comment.all.sample.id,
               votable_type: "Comment")
