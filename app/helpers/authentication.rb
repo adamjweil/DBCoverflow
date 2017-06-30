@@ -17,4 +17,5 @@ helpers do
   def logged_in?
       !!@user
   end
+
 end

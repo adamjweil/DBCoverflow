@@ -1,1 +1,3 @@
-<%=  @question.answers.answer %>
+<% @answers.each do |answer| %>
+  <%= answer.answer %>
+<% end %>
