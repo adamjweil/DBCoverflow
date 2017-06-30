@@ -1,3 +1,7 @@
+get '/' do
+  erb :'/questions/questions'
+end
+
 get '/questions' do
   @questions = Question.all
   erb :'/questions/questions'

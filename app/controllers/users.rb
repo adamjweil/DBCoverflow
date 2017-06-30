@@ -8,7 +8,7 @@ end
 
 post '/register' do
   create_user
-  redirect '/questions'
+  redirect '/questions/questions'
 end
 
 
@@ -23,5 +23,7 @@ post '/sessions' do
 end
 
 get '/logout' do
-  @user = nil
+  session.clear
+  redirect '/questions'
+
 end
