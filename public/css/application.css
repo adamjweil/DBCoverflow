@@ -20,7 +20,7 @@
 
 #login form {
     background-color: F8F8F8;
-    width: 25%;
+    width: 30%;
     border: 3px solid #f1f1f1;
     margin-top: 20px;
     margin-left: 100px;
@@ -31,7 +31,7 @@
 }
 
 #login form input[type=email], input[type=password] {
-    width: 80%;
+    /*width: 25%;*/
     margin: 8px 0;
     display: block;
     border: 1px solid #ccc;
@@ -64,7 +64,7 @@ nav ul {
 }
 
 nav li {
-    float: left;
+    float: right;
 }
 
 nav li a {
