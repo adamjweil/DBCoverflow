@@ -1,6 +1,5 @@
 <nav>
   <ul>
-    <% current_user %>
     <% if logged_in? %>
       <li ><a href='/users/logout'>Log out</a></li>
       <li>Hi <%= @current_user.username %></li>

@@ -1,4 +1,4 @@
-get '/comments/:id' do 
+get '/comments/:id' do
   @question = Question.find(params[:id])
   @comments = @question.comments.all
 
@@ -6,7 +6,6 @@ get '/comments/:id' do
 end
 
 get '/comments/new' do
- 
   erb :'comments/new'
 end
 
