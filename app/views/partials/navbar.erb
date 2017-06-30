@@ -1,11 +1,11 @@
 <nav>
   <ul>
+    <% current_user %>
     <% if logged_in? %>
-    <li ><a href='/users/logout'>Log out</a></li>
-    <li ><a href='/questions'><%= user.find_by(session[:id])%></a></li>
+      <li ><a href='/users/logout'>Log out</a></li>
+      <li>Hi <%= @current_user.username %></li>
     <% else %>
-    <li class=><a href='login'>Log in</a></li>
-    <li ><a href='/questions'>Questions</a></li>
+      <li class=><a href='login'>Log in</a></li>
     <% end %>
   </ul>
 </nav>

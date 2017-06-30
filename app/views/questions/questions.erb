@@ -13,9 +13,11 @@
       <form method="post" action='/questions/<%= question.id %>/downvote' class="inline">
         <button type="submit" name="submit_param" value="submit_value" class="fa fa-sort-desc vote-button downvote-button"></button>
       </form>
+
       <a class="question" href="/answers/<%= question.id %>"> <h2><%= question.question %></h2> </a>
       <a class="answerbtn" href="/answers/<%= question.id %>"> answer</a>
-      <a class="commentbtn" href="/comment/<%= question.id %>"> comment</a>
+      <a class="commentbtn" href="/answers/<%= question.id %>"> comment</a>
+
       <p>
         <%= erb :'/questions/_totalvotes', layout: false, locals: {question: question} %>
         <span class='username'><%= question.user.username %></span>
